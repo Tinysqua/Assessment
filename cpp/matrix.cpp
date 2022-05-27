@@ -73,6 +73,25 @@ Matrix Matrix::operator*(const Matrix &other)  {
     }
     return C;
 }
+
+Matrix& Matrix::operator=(const Matrix& other) 
+{
+    if (this->rows!=other.rows||this->cols!= other.cols)
+    {
+        std::cout<<"the format of two matrixes are not the same"<<std::endl;
+        return ;
+    }
+    else
+    {
+        for(int i=0;i< this->rows;i++)
+        for(int k=0;k< this->cols;k++)
+        {
+            this->matrix[i][k] = other.matrix[i][k];
+        }
+        return;
+    }
+    
+}
 Matrix Matrix::operator+(const Matrix& other)
 {
     int new_rows = this->rows;
